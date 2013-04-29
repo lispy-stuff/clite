@@ -27,7 +27,7 @@ Besides *TESTP* for simple conditions and *TEST=* for numbers, the library provi
 If you don't specify any tags when calling *RUN-TESTS* it runs all tests defined since clite was loaded:
 
 ```
-> (run-tests)
+> (clite:run-tests)
 Testing NIL...Done!
 3
 ```
@@ -37,7 +37,7 @@ Testing NIL...Done!
 Nested *TEST* forms allows for an easy way to share data between tests and greater precision when controlling which tests should run:
 
 ```
-> (run-tests :blog :add :post)
+> (clite:run-tests :blog :add :post)
 Testing (:BLOG :ADD :POST).Done!
 1
 ```
@@ -45,7 +45,7 @@ Testing (:BLOG :ADD :POST).Done!
 Separating the :add, :remove and :post tags allows for easy running of all tests having something to do with blog posts:
 
 ```
-> (run-tests :blog :post)
+> (clite:run-tests :blog :post)
 Testing (:BLOG :POST)..Done!
 2
 ```

@@ -35,7 +35,7 @@ remaining RUNNING-TAGS"
     ((null test-tags)
      (values null-test-result running-tags))
     ((eq (car test-tags) (car running-tags))
-     (run? (cdr test-tags) (cdr running-tags) :null-test-result t))
+     (run? (cdr test-tags) (cdr running-tags) :null-test-result null-test-result))
     (t (run? (cdr test-tags) running-tags))))
 
 (defmac test (tags &body body)

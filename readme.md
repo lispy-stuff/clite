@@ -1,6 +1,6 @@
 Welcome to **clite**, a lite weight testing framework for Common Lisp.
 
-Start by defininig your tests using the *TEST*-macro:
+Start by defininig your tests using the *TEST*-macro, nested *TEST* forms allows for an easy way to share data between tests:
 
 ```lisp
 (test (:blog)
@@ -34,7 +34,7 @@ Testing NIL...Done!
 
 *RUN-TESTS* returns the number of test forms (*TESTP*, *TEST=* etc.) processed.
 
-Nested *TEST* forms allows for an easy way to share data between tests and greater precision when controlling which tests should run:
+Addressing nested tests is done by giving *run-tests* a trail of tags to follow:
 
 ```
 > (clite:run-tests :blog :add :post)
